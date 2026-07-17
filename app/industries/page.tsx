@@ -27,7 +27,6 @@ export default function Page() {
     <section className="industry-grid content-frame">
       <article className="industry-card dark reveal">
         <p className="micro">01 / Нефтегаз</p>
-        <div className="industry-figure"></div>
         <div>
           <h2>
             Северный
@@ -39,7 +38,6 @@ export default function Page() {
       </article>
       <article className="industry-card reveal">
         <p className="micro">02 / Металлургия</p>
-        <div className="industry-figure"></div>
         <div>
           <h2>
             Горячая
@@ -51,7 +49,6 @@ export default function Page() {
       </article>
       <article className="industry-card reveal">
         <p className="micro">03 / Строительство</p>
-        <div className="industry-figure"></div>
         <div>
           <h2>
             Высота и
@@ -63,7 +60,6 @@ export default function Page() {
       </article>
       <article className="industry-card dark reveal">
         <p className="micro">04 / Логистика</p>
-        <div className="industry-figure"></div>
         <div>
           <h2>
             Видимость

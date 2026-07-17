@@ -16,11 +16,9 @@ export default function Page() {
         <div>
           <p className="micro kicker">Производитель профессиональной экипировки</p>
           <h1 className="hero-title">
-            Рабочая
-            <br />
-            <span className="outline">среда</span>
-            <br />
-            под контролем
+            <span className="hero-title-line">Рабочая</span>
+            <span className="hero-title-line outline">среда</span>
+            <span className="hero-title-line hero-title-line--wide">под контролем</span>
           </h1>
         </div>
         <div className="hero-bottom">

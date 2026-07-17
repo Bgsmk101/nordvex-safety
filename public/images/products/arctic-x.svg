@@ -3,7 +3,6 @@
 <linearGradient id="body" x1="170" y1="130" x2="470" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#B8C3C8"/><stop offset="1" stop-color="#15191D"/></linearGradient>
 <filter id="s" x="80" y="60" width="460" height="650"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-opacity=".26"/></filter>
 </defs>
-<g opacity=".45" stroke="#111418"><circle cx="310" cy="345" r="240"/><circle cx="310" cy="345" r="172" stroke-dasharray="7 11"/><path d="M70 345H550M310 90V650"/></g>
 <g filter="url(#s)">
 <path d="M263 76H357L382 149L340 188H280L238 149L263 76Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
 <path d="M247 130L180 159L109 286L158 318L201 252L190 499H430L419 252L462 318L511 286L440 159L373 130L340 188H280L247 130Z" fill="url(#body)" stroke="#F0EEE8" stroke-opacity=".65" stroke-width="2"/>
