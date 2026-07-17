@@ -117,7 +117,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <Link className="brand-mark" href="/" aria-label="NORDVEX — главная">NV</Link>
         <Link className="brand-word" href="/">NORD<span>VEX</span></Link>
         <div className="header-meta">
-          <Link className="header-link" href="/contacts/#form"><span>Запросить образцы</span><span>↗</span></Link>
+          <Link className="header-link header-link--icon" href="/contacts/#form"><span>Запросить образцы</span><span className="icon-arrow" aria-hidden="true"></span></Link>
           <button className="menu-trigger" type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}><span>Разделы</span><i /></button>
         </div>
       </header>

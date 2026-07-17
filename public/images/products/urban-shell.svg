@@ -1,22 +1,38 @@
-<svg width="620" height="740" viewBox="0 0 620 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+
 <defs>
-<linearGradient id="body" x1="170" y1="130" x2="470" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#22272C"/><stop offset="1" stop-color="#15191D"/></linearGradient>
-<filter id="s" x="80" y="60" width="460" height="650"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-opacity=".26"/></filter>
+  <filter id="shadow" x="40" y="30" width="640" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#111418" flood-opacity="0.24"/>
+  </filter>
+  <pattern id="ripstop" width="18" height="18" patternUnits="userSpaceOnUse">
+    <path d="M0 0H18V18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.7"/>
+  </pattern>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#F4F5F5"/><stop offset="0.45" stop-color="#A8B0B5"/><stop offset="1" stop-color="#424A50"/>
+  </linearGradient>
 </defs>
-<g filter="url(#s)">
-<path d="M263 76H357L382 149L340 188H280L238 149L263 76Z" fill="#111418" stroke="#9AA0FF" stroke-width="3"/>
-<path d="M247 130L180 159L109 286L158 318L201 252L190 499H430L419 252L462 318L511 286L440 159L373 130L340 188H280L247 130Z" fill="url(#body)" stroke="#F0EEE8" stroke-opacity=".65" stroke-width="2"/>
-<path d="M280 188H340V499H280V188Z" fill="#111418"/>
-<path d="M206 211H266V333H199L206 211Z" fill="#9AA0FF"/>
-<path d="M354 211H414L421 333H354V211Z" fill="#9AA0FF"/>
-<path d="M190 378H430" stroke="#F0EEE8" stroke-width="4"/>
-<path d="M222 499H305V682H196L222 499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M315 499H398L424 682H315V499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M196 596H302M318 596H424" stroke="#9AA0FF" stroke-width="12"/>
-<path d="M143 285L181 310L158 454L108 437L143 285Z" fill="#333A40"/>
-<path d="M477 285L439 310L462 454L512 437L477 285Z" fill="#333A40"/>
-<path d="M310 194V494" stroke="#9AA0FF" stroke-width="2" stroke-dasharray="7 7"/>
+<linearGradient id="g1" x1="230" y1="150" x2="500" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#47515B"/><stop offset=".48" stop-color="#252D35"/><stop offset="1" stop-color="#11161B"/></linearGradient><linearGradient id="g2" x1="280" y1="570" x2="460" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="#303944"/><stop offset="1" stop-color="#11161B"/></linearGradient>
+<g>
+<path d="M304 126H416L448 184L406 222H314L272 184L304 126Z" fill="#171D23" stroke="#9AA0FF" stroke-width="3"/>
+<path d="M274 170L204 198L126 330L180 366L230 298L218 586H502L490 298L540 366L594 330L516 198L446 170L406 222H314L274 170Z" fill="url(#g1)" stroke="#DDE1E6" stroke-opacity=".45" stroke-width="2"/>
+<path d="M314 222H406V586H314V222Z" fill="#11161B"/>
+<path d="M238 252H300V398H228L238 252Z" fill="#9AA0FF" opacity=".9"/>
+<path d="M420 252H482L492 398H420V252Z" fill="#9AA0FF" opacity=".9"/>
+<path d="M218 450H502" stroke="#87919A" stroke-width="4"/>
+<path d="M252 586H354V836H212L252 586Z" fill="url(#g2)" stroke="#DDE1E6" stroke-opacity=".35" stroke-width="2"/>
+<path d="M366 586H468L508 836H366V586Z" fill="url(#g2)" stroke="#DDE1E6" stroke-opacity=".35" stroke-width="2"/>
+<path d="M214 728H352M368 728H506" stroke="#9AA0FF" stroke-width="12"/>
+<path d="M154 328L204 359L178 544L114 520L154 328Z" fill="#2D3740"/>
+<path d="M566 328L516 359L542 544L606 520L566 328Z" fill="#2D3740"/>
+<path d="M112 512L182 538L170 598L98 574L112 512Z" fill="#161C22" stroke="#9AA0FF" stroke-width="3"/>
+<path d="M608 512L538 538L550 598L622 574L608 512Z" fill="#161C22" stroke="#9AA0FF" stroke-width="3"/>
+<path d="M360 230V578" stroke="#9AA0FF" stroke-width="2"/>
+<path d="M214 170H506V586H214V170Z" fill="url(#ripstop)" opacity=".4"/>
 </g>
-<rect x="34" y="32" width="155" height="34" fill="#111418"/><text x="49" y="54" fill="#9AA0FF" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">URBAN SHELL</text>
-<text x="443" y="704" fill="#111418" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">4-WAY</text>
+<g fill="#111418" font-family="Arial" font-weight="700" letter-spacing="2">
+  <text x="42" y="58" font-size="14">URBAN SHELL</text>
+  <text x="570" y="850" font-size="14">US / 4-WAY</text>
+</g>
+<path d="M42 72H204" stroke="#9AA0FF" stroke-width="5"/>
+
 </svg>

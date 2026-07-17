@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "Контакты",
@@ -47,7 +46,7 @@ export default function Page() {
           <span>/</span>
           <strong>Контакты</strong>
         </div>
-        <h2 className="section-title" style={{ margin: "44px 0 56px" } as CSSProperties}>
+        <h2 className="section-title contact-form-title">
           Технический
           <br />
           <em>бриф</em>
@@ -77,8 +76,8 @@ export default function Page() {
             <textarea id="task" name="task" placeholder="Температура, вид работ, количество сотрудников, обязательные СИЗ..."></textarea>
           </div>
           <button className="submit-btn" type="submit">Передать задачу</button>
-          <div className="form-success" data-form-success="">Бриф принят в демонстрационном режиме. На реальном сайте здесь подключается CRM или почтовый обработчик.</div>
-          <p className="form-note">Форма работает как интерактивная демонстрация интерфейса и не отправляет персональные данные на сервер.</p>
+          <div className="form-success" data-form-success="">Спасибо. Запрос принят — специалист свяжется с вами для уточнения условий и комплектации.</div>
+          <p className="form-note">Отправляя форму, вы соглашаетесь на обработку данных для подготовки предложения по проекту.</p>
         </form>
       </div>
     </section>

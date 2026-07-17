@@ -1,22 +1,38 @@
-<svg width="620" height="740" viewBox="0 0 620 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+
 <defs>
-<linearGradient id="body" x1="170" y1="130" x2="470" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#707A80"/><stop offset="1" stop-color="#15191D"/></linearGradient>
-<filter id="s" x="80" y="60" width="460" height="650"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-opacity=".26"/></filter>
+  <filter id="shadow" x="40" y="30" width="640" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#111418" flood-opacity="0.24"/>
+  </filter>
+  <pattern id="ripstop" width="18" height="18" patternUnits="userSpaceOnUse">
+    <path d="M0 0H18V18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.7"/>
+  </pattern>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#F4F5F5"/><stop offset="0.45" stop-color="#A8B0B5"/><stop offset="1" stop-color="#424A50"/>
+  </linearGradient>
 </defs>
-<g filter="url(#s)">
-<path d="M263 76H357L382 149L340 188H280L238 149L263 76Z" fill="#111418" stroke="#F1E66C" stroke-width="3"/>
-<path d="M247 130L180 159L109 286L158 318L201 252L190 499H430L419 252L462 318L511 286L440 159L373 130L340 188H280L247 130Z" fill="url(#body)" stroke="#F0EEE8" stroke-opacity=".65" stroke-width="2"/>
-<path d="M280 188H340V499H280V188Z" fill="#111418"/>
-<path d="M206 211H266V333H199L206 211Z" fill="#F1E66C"/>
-<path d="M354 211H414L421 333H354V211Z" fill="#F1E66C"/>
-<path d="M190 378H430" stroke="#F0EEE8" stroke-width="4"/>
-<path d="M222 499H305V682H196L222 499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M315 499H398L424 682H315V499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M196 596H302M318 596H424" stroke="#F1E66C" stroke-width="12"/>
-<path d="M143 285L181 310L158 454L108 437L143 285Z" fill="#333A40"/>
-<path d="M477 285L439 310L462 454L512 437L477 285Z" fill="#333A40"/>
-<path d="M310 194V494" stroke="#F1E66C" stroke-width="2" stroke-dasharray="7 7"/>
+<linearGradient id="g1" x1="230" y1="150" x2="500" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#F4FF75"/><stop offset=".48" stop-color="#D5FF3F"/><stop offset="1" stop-color="#8BA820"/></linearGradient><linearGradient id="g2" x1="280" y1="570" x2="460" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="#263440"/><stop offset="1" stop-color="#0E151B"/></linearGradient>
+<g>
+<path d="M304 124H416L448 184L406 222H314L272 184L304 124Z" fill="#162029" stroke="#D5FF3F" stroke-width="3"/>
+<path d="M274 170L202 200L122 337L178 372L228 300L216 592H504L492 300L542 372L598 337L518 200L446 170L406 222H314L274 170Z" fill="url(#g1)" stroke="#F3F6E6" stroke-opacity=".65" stroke-width="2"/>
+<path d="M314 222H406V592H314V222Z" fill="#1D2A34"/>
+<path d="M216 392H504" stroke="#F0EEE8" stroke-width="18"/>
+<path d="M216 428H504" stroke="#273541" stroke-width="12"/>
+<path d="M252 592H354V835H214L252 592Z" fill="url(#g2)" stroke="#D9E0E3" stroke-opacity=".42" stroke-width="2"/>
+<path d="M366 592H468L506 835H366V592Z" fill="url(#g2)" stroke="#D9E0E3" stroke-opacity=".42" stroke-width="2"/>
+<path d="M216 714H352M368 714H504" stroke="#F0EEE8" stroke-width="18"/>
+<path d="M216 746H352M368 746H504" stroke="#D5FF3F" stroke-width="12"/>
+<path d="M150 336L202 368L176 548L112 524L150 336Z" fill="#D5FF3F"/>
+<path d="M570 336L518 368L544 548L608 524L570 336Z" fill="#D5FF3F"/>
+<path d="M110 516L180 542L168 602L96 578L110 516Z" fill="#1D2A34" stroke="#F0EEE8" stroke-width="4"/>
+<path d="M610 516L540 542L552 602L624 578L610 516Z" fill="#1D2A34" stroke="#F0EEE8" stroke-width="4"/>
+<path d="M360 230V584" stroke="#E8F3B7" stroke-width="2"/>
+<path d="M214 170H506V592H214V170Z" fill="url(#ripstop)" opacity=".38"/>
 </g>
-<rect x="34" y="32" width="155" height="34" fill="#111418"/><text x="49" y="54" fill="#F1E66C" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">VECTOR HI</text>
-<text x="443" y="704" fill="#111418" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">VIS 360</text>
+<g fill="#111418" font-family="Arial" font-weight="700" letter-spacing="2">
+  <text x="42" y="58" font-size="14">VECTOR HI</text>
+  <text x="570" y="850" font-size="14">VH / VIS 360</text>
+</g>
+<path d="M42 72H204" stroke="#D5FF3F" stroke-width="5"/>
+
 </svg>

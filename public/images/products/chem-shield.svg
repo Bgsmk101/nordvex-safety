@@ -1,22 +1,36 @@
-<svg width="620" height="740" viewBox="0 0 620 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="720" height="900" viewBox="0 0 720 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+
 <defs>
-<linearGradient id="body" x1="170" y1="130" x2="470" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#D7DDDE"/><stop offset="1" stop-color="#15191D"/></linearGradient>
-<filter id="s" x="80" y="60" width="460" height="650"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-opacity=".26"/></filter>
+  <filter id="shadow" x="40" y="30" width="640" height="840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#111418" flood-opacity="0.24"/>
+  </filter>
+  <pattern id="ripstop" width="18" height="18" patternUnits="userSpaceOnUse">
+    <path d="M0 0H18V18" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.7"/>
+  </pattern>
+  <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#F4F5F5"/><stop offset="0.45" stop-color="#A8B0B5"/><stop offset="1" stop-color="#424A50"/>
+  </linearGradient>
 </defs>
-<g filter="url(#s)">
-<path d="M263 76H357L382 149L340 188H280L238 149L263 76Z" fill="#111418" stroke="#72D4C6" stroke-width="3"/>
-<path d="M247 130L180 159L109 286L158 318L201 252L190 499H430L419 252L462 318L511 286L440 159L373 130L340 188H280L247 130Z" fill="url(#body)" stroke="#F0EEE8" stroke-opacity=".65" stroke-width="2"/>
-<path d="M280 188H340V499H280V188Z" fill="#111418"/>
-<path d="M206 211H266V333H199L206 211Z" fill="#72D4C6"/>
-<path d="M354 211H414L421 333H354V211Z" fill="#72D4C6"/>
-<path d="M190 378H430" stroke="#F0EEE8" stroke-width="4"/>
-<path d="M222 499H305V682H196L222 499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M315 499H398L424 682H315V499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
-<path d="M196 596H302M318 596H424" stroke="#72D4C6" stroke-width="12"/>
-<path d="M143 285L181 310L158 454L108 437L143 285Z" fill="#333A40"/>
-<path d="M477 285L439 310L462 454L512 437L477 285Z" fill="#333A40"/>
-<path d="M310 194V494" stroke="#72D4C6" stroke-width="2" stroke-dasharray="7 7"/>
+<linearGradient id="g1" x1="230" y1="120" x2="520" y2="700" gradientUnits="userSpaceOnUse"><stop stop-color="#F2F7F6"/><stop offset=".45" stop-color="#B9D8D3"/><stop offset="1" stop-color="#6C9D96"/></linearGradient><linearGradient id="g2" x1="280" y1="580" x2="460" y2="840" gradientUnits="userSpaceOnUse"><stop stop-color="#8BBAB3"/><stop offset="1" stop-color="#38655F"/></linearGradient>
+<g>
+<path d="M360 90C420 90 458 132 458 190C458 220 448 242 428 262H292C272 242 262 220 262 190C262 132 300 90 360 90Z" fill="url(#g1)" stroke="#72D4C6" stroke-width="3"/>
+<path d="M290 214L218 246L126 372L178 410L228 348L214 610H506L492 348L542 410L594 372L502 246L430 214L406 258H314L290 214Z" fill="url(#g1)" stroke="#EAF4F2" stroke-width="2"/>
+<path d="M314 258H406V610H314V258Z" fill="#4D7C76" opacity=".72"/>
+<path d="M360 268V602" stroke="#EAF4F2" stroke-width="4"/>
+<path d="M250 610H354V838H214L250 610Z" fill="url(#g2)" stroke="#EAF4F2" stroke-opacity=".55" stroke-width="2"/>
+<path d="M366 610H470L506 838H366V610Z" fill="url(#g2)" stroke="#EAF4F2" stroke-opacity=".55" stroke-width="2"/>
+<path d="M216 730H352M368 730H504" stroke="#72D4C6" stroke-width="13"/>
+<path d="M154 370L218 402L188 580L116 554L154 370Z" fill="#7EAAA4"/>
+<path d="M566 370L502 402L532 580L604 554L566 370Z" fill="#7EAAA4"/>
+<path d="M112 548L192 576L180 638L98 610L112 548Z" fill="#3F6C66" stroke="#72D4C6" stroke-width="3"/>
+<path d="M608 548L528 576L540 638L622 610L608 548Z" fill="#3F6C66" stroke="#72D4C6" stroke-width="3"/>
+<path d="M318 178C330 164 344 157 360 157C376 157 390 164 402 178" stroke="#3F6C66" stroke-width="7" stroke-linecap="round"/>
+<path d="M214 214H506V610H214V214Z" fill="url(#ripstop)" opacity=".55"/>
 </g>
-<rect x="34" y="32" width="155" height="34" fill="#111418"/><text x="49" y="54" fill="#72D4C6" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">CHEM SHIELD</text>
-<text x="443" y="704" fill="#111418" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">TYPE 6</text>
+<g fill="#111418" font-family="Arial" font-weight="700" letter-spacing="2">
+  <text x="42" y="58" font-size="14">CHEM SHIELD</text>
+  <text x="570" y="850" font-size="14">CS / TYPE 6</text>
+</g>
+<path d="M42 72H204" stroke="#72D4C6" stroke-width="5"/>
+
 </svg>

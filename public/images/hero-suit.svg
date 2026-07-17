@@ -1,47 +1,65 @@
-<svg width="820" height="1040" viewBox="0 0 820 1040" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="920" height="1080" viewBox="0 0 920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="jacket" x1="190" y1="180" x2="650" y2="820" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#CFD5D7"/>
-      <stop offset="0.5" stop-color="#778087"/>
-      <stop offset="1" stop-color="#444B51"/>
+    <linearGradient id="jacketBody" x1="242" y1="184" x2="652" y2="804" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDE2E5"/>
+      <stop offset="0.5" stop-color="#8C949C"/>
+      <stop offset="1" stop-color="#474F57"/>
     </linearGradient>
-    <linearGradient id="dark" x1="300" y1="240" x2="560" y2="920" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#242A2F"/>
-      <stop offset="1" stop-color="#111418"/>
+    <linearGradient id="charcoal" x1="332" y1="228" x2="560" y2="918" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2D343A"/>
+      <stop offset="1" stop-color="#0F1318"/>
     </linearGradient>
-    <filter id="shadow" x="80" y="80" width="660" height="930" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="22" stdDeviation="20" flood-color="#000" flood-opacity="0.35"/>
+    <linearGradient id="steel" x1="166" y1="340" x2="250" y2="612" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66717A"/>
+      <stop offset="1" stop-color="#2B3138"/>
+    </linearGradient>
+    <filter id="shadow" x="86" y="68" width="748" height="972" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#000000" flood-opacity="0.32"/>
+    </filter>
+    <filter id="softGlow" x="0" y="0" width="920" height="1080" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="32"/>
     </filter>
   </defs>
-  <g filter="url(#shadow)">
-    <path d="M348 94H472L505 190L451 237H369L315 190L348 94Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
-    <path d="M336 162L251 196L157 364L220 405L275 313L258 647H562L545 313L600 405L663 364L569 196L484 162L451 237H369L336 162Z" fill="url(#jacket)" stroke="#F0EEE8" stroke-opacity="0.65" stroke-width="2"/>
-    <path d="M369 237H451V647H369V237Z" fill="url(#dark)"/>
-    <path d="M283 259H350V425H274L283 259Z" fill="#D5FF3F"/>
-    <path d="M470 259H537L546 425H470V259Z" fill="#D5FF3F"/>
-    <path d="M259 498H561" stroke="#F0EEE8" stroke-width="5"/>
-    <path d="M307 647H408V982H270L307 647Z" fill="url(#dark)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
-    <path d="M412 647H513L550 982H412V647Z" fill="url(#dark)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
-    <path d="M268 804H398" stroke="#D5FF3F" stroke-width="16"/>
-    <path d="M422 804H552" stroke="#D5FF3F" stroke-width="16"/>
-    <path d="M202 362L251 395L219 594L154 572L202 362Z" fill="#373E44" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
-    <path d="M618 362L569 395L601 594L666 572L618 362Z" fill="#373E44" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
-    <path d="M151 566L222 590L212 651L138 627L151 566Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
-    <path d="M669 566L598 590L608 651L682 627L669 566Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
-    <path d="M314 190L369 237L345 291" stroke="#111418" stroke-width="7"/>
-    <path d="M506 190L451 237L475 291" stroke="#111418" stroke-width="7"/>
-    <rect x="296" y="310" width="44" height="14" fill="#111418"/>
-    <rect x="480" y="310" width="44" height="14" fill="#111418"/>
-    <path d="M410 244V640" stroke="#D5FF3F" stroke-width="2" stroke-dasharray="8 8"/>
-    <circle cx="410" cy="393" r="6" fill="#D5FF3F"/>
-    <circle cx="410" cy="513" r="6" fill="#D5FF3F"/>
+
+
+
+  <g>
+    <path d="M394 116H526L558 198L500 252H420L362 198L394 116Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
+    <path d="M362 186L278 222L186 366L248 406L304 330L286 690H634L616 330L672 406L734 366L642 222L558 186L500 252H420L362 186Z" fill="url(#jacketBody)" stroke="#F0EEE8" stroke-opacity="0.62" stroke-width="2.2"/>
+    <path d="M420 252H500V690H420V252Z" fill="url(#charcoal)"/>
+    <path d="M320 278H388V466H308L320 278Z" fill="#D5FF3F"/>
+    <path d="M532 278H600L612 466H532V278Z" fill="#D5FF3F"/>
+    <rect x="332" y="322" width="44" height="13" fill="#111418" rx="3"/>
+    <rect x="544" y="322" width="44" height="13" fill="#111418" rx="3"/>
+    <path d="M293 534H628" stroke="#F0EEE8" stroke-width="5"/>
+    <path d="M289 570H631" stroke="#6D757D" stroke-width="1.5" stroke-dasharray="6 7" opacity="0.6"/>
+    <path d="M340 690H460V978H286L340 690Z" fill="url(#charcoal)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M460 690H580L634 978H460V690Z" fill="url(#charcoal)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M284 840H458" stroke="#D5FF3F" stroke-width="18"/>
+    <path d="M462 840H636" stroke="#D5FF3F" stroke-width="18"/>
+    <path d="M232 362L278 394L252 612L184 586L232 362Z" fill="url(#steel)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M688 362L642 394L668 612L736 586L688 362Z" fill="url(#steel)" stroke="#F0EEE8" stroke-opacity="0.45" stroke-width="2"/>
+    <path d="M182 580L256 606L244 672L166 646L182 580Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
+    <path d="M738 580L664 606L676 672L754 646L738 580Z" fill="#111418" stroke="#D5FF3F" stroke-width="3"/>
+    <path d="M360 198L420 252L392 310" stroke="#1B2026" stroke-width="7" stroke-linecap="round"/>
+    <path d="M560 198L500 252L528 310" stroke="#1B2026" stroke-width="7" stroke-linecap="round"/>
+    <path d="M460 258V684" stroke="#D5FF3F" stroke-width="2.2" stroke-dasharray="8 8"/>
+    <circle cx="460" cy="418" r="7" fill="#D5FF3F"/>
+    <circle cx="460" cy="556" r="7" fill="#D5FF3F"/>
+    <path d="M326 690H594" stroke="#F0EEE8" stroke-opacity="0.28" stroke-width="1.4"/>
+    <path d="M312 910H608" stroke="#F0EEE8" stroke-opacity="0.18" stroke-width="1.2"/>
+    <path d="M322 976H456L444 1002H316L322 976Z" fill="#0F1318"/>
+    <path d="M466 976H600L606 1002H478L466 976Z" fill="#0F1318"/>
   </g>
+
   <g fill="#D5FF3F" font-family="Arial" font-size="15" font-weight="700" letter-spacing="2">
-    <text x="80" y="250">LAYER 03</text>
-    <text x="608" y="742">NVX / 01</text>
+    <text x="108" y="284">LAYER 03</text>
+    <text x="648" y="760">NVX / 01</text>
+    <text x="610" y="218">THERMAL / OUTER</text>
   </g>
-  <g stroke="#D5FF3F" stroke-width="1">
-    <path d="M80 265H230L276 316"/>
-    <path d="M610 752H555L515 705"/>
+  <g stroke="#D5FF3F" stroke-width="1.2">
+    <path d="M108 298H248L302 338"/>
+    <path d="M650 774H590L540 726"/>
+    <path d="M742 224H646"/>
   </g>
 </svg>

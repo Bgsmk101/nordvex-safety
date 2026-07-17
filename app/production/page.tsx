@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "Производство",
@@ -23,7 +22,7 @@ export default function Page() {
           до серии
         </h1>
       </div>
-      <p className="page-lead">Производственный цикл начинается не с раскроя. Он начинается с наблюдения за тем, как человек работает и где экипировка должна взять нагрузку на себя.</p>
+      <p className="page-lead">Сначала мы изучаем рабочую среду и движение сотрудника, затем подбираем материалы, создаём прототип и проверяем его в реальной смене. Только после этого модель выходит в серию.</p>
     </section>
     <section className="section content-frame">
       <div className="section-head reveal">
@@ -158,32 +157,12 @@ export default function Page() {
         </div>
         <blockquote>Шов, молния, световозвращающая лента и усиление рассматриваются как элементы одной защитной цепи.</blockquote>
       </div>
-      <div className="split-visual">
-        <div className="material-rings">
-          <span style={{ "--i": "0" } as CSSProperties}></span>
-          <span style={{ "--i": "1" } as CSSProperties}></span>
-          <span style={{ "--i": "2" } as CSSProperties}></span>
-          <span style={{ "--i": "3" } as CSSProperties}></span>
-          <span style={{ "--i": "4" } as CSSProperties}></span>
-          <span style={{ "--i": "5" } as CSSProperties}></span>
-          <span style={{ "--i": "6" } as CSSProperties}></span>
-          <span style={{ "--i": "7" } as CSSProperties}></span>
-          <span style={{ "--i": "8" } as CSSProperties}></span>
-        </div>
-        <div className="material-core">
-          <span>QC</span>
-        </div>
-        <div className="material-label a micro">
-          Input control
-          <br />
-          Cutting map
-          <br />
-          Seam audit
-        </div>
-        <div className="material-label b micro">
-          Final inspection
-          <br />
-          Digital passport
+      <div className="split-visual split-visual--quality">
+        <div className="quality-board" aria-label="Контрольные точки производства NORDVEX">
+          <div><span>01</span><strong>Входной контроль</strong><small>Материал и фурнитура</small></div>
+          <div><span>02</span><strong>Карта раскроя</strong><small>Точность деталей</small></div>
+          <div><span>03</span><strong>Аудит швов</strong><small>Нагрузка и герметичность</small></div>
+          <div><span>04</span><strong>Финальная проверка</strong><small>Эталон и паспорт изделия</small></div>
         </div>
       </div>
     </section>

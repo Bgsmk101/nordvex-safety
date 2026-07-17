@@ -23,7 +23,7 @@ export default function Page() {
           атлас
         </h1>
       </div>
-      <p className="page-lead">Не отдельные изделия, а совместимые защитные слои. Фильтруйте каталог по ведущему риску и собирайте систему под задачу.</p>
+      <p className="page-lead">Каталог собран как система защиты: от зимних комплектов и огнестойких решений до сигнальной, химической и мобильной экипировки. Выбирайте ведущий риск и сразу сравнивайте готовые комплекты.</p>
     </section>
     <div className="catalog-controls content-frame" aria-label="Фильтр каталога">
       <button className="filter-btn active" data-filter="all">Все системы</button>

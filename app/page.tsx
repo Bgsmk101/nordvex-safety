@@ -18,11 +18,13 @@ export default function Page() {
           <h1 className="hero-title">
             <span className="hero-title-line">Рабочая</span>
             <span className="hero-title-line outline">среда</span>
-            <span className="hero-title-line hero-title-line--wide">под контролем</span>
+            <span className="hero-title-line">под</span>
+            <span className="hero-title-line hero-title-line--long">контролем</span>
           </h1>
+          <p className="hero-lead">NORDVEX проектирует комплекты СИЗ и спецодежды как единую систему: под климат, риск, движение человека и регламент конкретного производства.</p>
+          <p className="hero-sublead">Не отдельные вещи, а согласованные слои защиты, которые работают вместе на площадке, в цехе и на маршруте сотрудника.</p>
         </div>
         <div className="hero-bottom">
-          <p className="hero-lead">NORDVEX проектирует комплекты СИЗ и спецодежды как единую систему: под климат, риск, движение человека и регламент конкретного производства.</p>
           <a className="text-link" href={`${basePath}/catalog/`}>Открыть продуктовый атлас</a>
         </div>
       </div>
@@ -32,7 +34,7 @@ export default function Page() {
           <span>Protection layer 03</span>
         </div>
         <div className="hero-suit">
-          <Image src={`${basePath}/images/hero-suit.svg`} alt="Инженерная визуализация защитного комплекта NORDVEX" width={720} height={900} priority unoptimized />
+          <Image src={`${basePath}/images/hero-suit.svg`} alt="Визуализация комплекта профессиональной экипировки NORDVEX" width={720} height={900} priority unoptimized />
         </div>
         <div className="hero-spec">Модульная конструкция, анатомический крой и совместимость слоёв позволяют собирать экипировку без разрыва между безопасностью и движением.</div>
       </div>
@@ -104,37 +106,37 @@ export default function Page() {
           <span className="n">01</span>
           <h3>Arctic X</h3>
           <p>Защита при экстремально низких температурах</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
         <a className="product-row" href={`${basePath}/catalog/#weld-core`}>
           <span className="n">02</span>
           <h3>Weld Core</h3>
           <p>Огнестойкая экипировка для горячих работ</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
         <a className="product-row" href={`${basePath}/catalog/#vector-hi`}>
           <span className="n">03</span>
           <h3>Vector Hi</h3>
           <p>Сигнальная система круговой видимости</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
         <a className="product-row" href={`${basePath}/catalog/#chem-shield`}>
           <span className="n">04</span>
           <h3>Chem Shield</h3>
           <p>Барьер от промышленных загрязнений</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
         <a className="product-row" href={`${basePath}/catalog/#urban-shell`}>
           <span className="n">05</span>
           <h3>Urban Shell</h3>
           <p>Мобильная форма для инженерных служб</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
         <a className="product-row" href={`${basePath}/catalog/#thermo-grid`}>
           <span className="n">06</span>
           <h3>Thermo Grid</h3>
           <p>Первый слой с управлением влагой</p>
-          <span className="arrow">↗</span>
+          <span className="arrow" aria-hidden="true"></span>
         </a>
       </div>
     </section>
@@ -150,31 +152,28 @@ export default function Page() {
         </div>
         <blockquote>«Хорошая спецодежда перестаёт ощущаться на теле и начинает работать как продолжение производственного процесса».</blockquote>
       </div>
-      <div className="split-visual">
-        <div className="material-rings">
-          <span style={{ "--i": "0" } as CSSProperties}></span>
-          <span style={{ "--i": "1" } as CSSProperties}></span>
-          <span style={{ "--i": "2" } as CSSProperties}></span>
-          <span style={{ "--i": "3" } as CSSProperties}></span>
-          <span style={{ "--i": "4" } as CSSProperties}></span>
-          <span style={{ "--i": "5" } as CSSProperties}></span>
-          <span style={{ "--i": "6" } as CSSProperties}></span>
-          <span style={{ "--i": "7" } as CSSProperties}></span>
-        </div>
-        <div className="material-core">
-          <span>4L</span>
-        </div>
-        <div className="material-label a micro">
-          Outer shell
-          <br />
-          Barrier
-          <br />
-          Insulation
-        </div>
-        <div className="material-label b micro">
-          Moisture transfer
-          <br />
-          Body layer
+      <div className="split-visual split-visual--layers">
+        <div className="layer-stack" aria-label="Четыре функциональных слоя системы NORDVEX">
+          <div className="layer-sheet layer-sheet--outer">
+            <span>04</span>
+            <strong>Outer shell</strong>
+            <small>Ветер, осадки и механическое воздействие</small>
+          </div>
+          <div className="layer-sheet layer-sheet--barrier">
+            <span>03</span>
+            <strong>Barrier</strong>
+            <small>Защита от производственной среды</small>
+          </div>
+          <div className="layer-sheet layer-sheet--insulation">
+            <span>02</span>
+            <strong>Insulation</strong>
+            <small>Стабильный тепловой контур</small>
+          </div>
+          <div className="layer-sheet layer-sheet--body">
+            <span>01</span>
+            <strong>Body layer</strong>
+            <small>Отвод влаги и контакт с телом</small>
+          </div>
         </div>
       </div>
     </section>
