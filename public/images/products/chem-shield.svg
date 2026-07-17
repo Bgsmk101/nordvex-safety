@@ -1,0 +1,23 @@
+<svg width="620" height="740" viewBox="0 0 620 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="body" x1="170" y1="130" x2="470" y2="640" gradientUnits="userSpaceOnUse"><stop stop-color="#D7DDDE"/><stop offset="1" stop-color="#15191D"/></linearGradient>
+<filter id="s" x="80" y="60" width="460" height="650"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-opacity=".26"/></filter>
+</defs>
+<g opacity=".45" stroke="#111418"><circle cx="310" cy="345" r="240"/><circle cx="310" cy="345" r="172" stroke-dasharray="7 11"/><path d="M70 345H550M310 90V650"/></g>
+<g filter="url(#s)">
+<path d="M263 76H357L382 149L340 188H280L238 149L263 76Z" fill="#111418" stroke="#72D4C6" stroke-width="3"/>
+<path d="M247 130L180 159L109 286L158 318L201 252L190 499H430L419 252L462 318L511 286L440 159L373 130L340 188H280L247 130Z" fill="url(#body)" stroke="#F0EEE8" stroke-opacity=".65" stroke-width="2"/>
+<path d="M280 188H340V499H280V188Z" fill="#111418"/>
+<path d="M206 211H266V333H199L206 211Z" fill="#72D4C6"/>
+<path d="M354 211H414L421 333H354V211Z" fill="#72D4C6"/>
+<path d="M190 378H430" stroke="#F0EEE8" stroke-width="4"/>
+<path d="M222 499H305V682H196L222 499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
+<path d="M315 499H398L424 682H315V499Z" fill="#20262B" stroke="#F0EEE8" stroke-opacity=".45" stroke-width="2"/>
+<path d="M196 596H302M318 596H424" stroke="#72D4C6" stroke-width="12"/>
+<path d="M143 285L181 310L158 454L108 437L143 285Z" fill="#333A40"/>
+<path d="M477 285L439 310L462 454L512 437L477 285Z" fill="#333A40"/>
+<path d="M310 194V494" stroke="#72D4C6" stroke-width="2" stroke-dasharray="7 7"/>
+</g>
+<rect x="34" y="32" width="155" height="34" fill="#111418"/><text x="49" y="54" fill="#72D4C6" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">CHEM SHIELD</text>
+<text x="443" y="704" fill="#111418" font-family="Arial" font-weight="700" font-size="14" letter-spacing="2">TYPE 6</text>
+</svg>
