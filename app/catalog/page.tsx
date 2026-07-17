@@ -6,149 +6,61 @@ export const metadata: Metadata = {
   description: "Каталог систем спецодежды и средств индивидуальной защиты NORDVEX.",
 };
 
+const products = [
+  { id: "arctic-x", category: "climate", label: "Климат", title: "Arctic X", code: "AX.01", image: "arctic-x.svg", text: "Многослойная зимняя система для открытых площадок и длительной работы при экстремально низких температурах." },
+  { id: "weld-core", category: "fire", label: "Огонь", title: "Weld Core", code: "WC.02", image: "weld-core.svg", text: "Огнестойкий комплект для сварочных, литейных и ремонтных работ с усилением зон повышенной нагрузки." },
+  { id: "vector-hi", category: "visibility", label: "Видимость", title: "Vector Hi", code: "VH.03", image: "vector-hi.svg", text: "Сигнальная система круговой видимости для дорожных, складских и аварийных бригад." },
+  { id: "chem-shield", category: "chemical", label: "Загрязнения", title: "Chem Shield", code: "CS.04", image: "chem-shield.svg", text: "Барьерный комплект от аэрозолей, пыли и промышленного загрязнения с защищёнными узлами." },
+  { id: "urban-shell", category: "mobility", label: "Мобильность", title: "Urban Shell", code: "US.05", image: "urban-shell.svg", text: "Облегчённая инженерная форма для сервисных служб, монтажа и городских инфраструктурных объектов." },
+  { id: "thermo-grid", category: "climate", label: "Первый слой", title: "Thermo Grid", code: "TG.06", image: "thermo-grid.svg", text: "Функциональный первый слой для управления влагой и поддержания стабильного микроклимата." },
+];
+
 export default function Page() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
-  <main className="page" id="main">
-    <section className="page-hero content-frame" data-index="02">
-      <div>
-        <div className="breadcrumbs">
-          <a href={`${basePath}/`}>NORDVEX</a>
-          <span>/</span>
-          <strong>Каталог</strong>
-        </div>
-        <h1>
-          Продуктовый
-          <br />
-          атлас
-        </h1>
-      </div>
-      <p className="page-lead">Каталог собран как система защиты: от зимних комплектов и огнестойких решений до сигнальной, химической и мобильной экипировки. Выбирайте ведущий риск и сразу сравнивайте готовые комплекты.</p>
-    </section>
-    <div className="catalog-controls content-frame" aria-label="Фильтр каталога">
-      <button className="filter-btn active" data-filter="all">Все системы</button>
-      <button className="filter-btn" data-filter="climate">Климат</button>
-      <button className="filter-btn" data-filter="fire">Огонь</button>
-      <button className="filter-btn" data-filter="visibility">Видимость</button>
-      <button className="filter-btn" data-filter="chemical">Загрязнения</button>
-      <button className="filter-btn" data-filter="mobility">Мобильность</button>
-    </div>
-    <section className="catalog-grid content-frame">
-      <article className="catalog-card reveal" id="arctic-x" data-category="climate">
-        <div className="catalog-top">
-          <span>01 / Climate</span>
-          <span>NVX–AX.01</span>
-        </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/arctic-x.svg`} alt="Комплект Arctic X" width={720} height={900} unoptimized />
-        </div>
-        <div className="catalog-meta">
+    <main id="main">
+      <section className="inner-hero">
+        <div className="container inner-hero-grid">
           <div>
-            <h2>Arctic X</h2>
-            <p>Многослойная зимняя система для открытых площадок и длительной работы при экстремально низких температурах.</p>
+            <p className="eyebrow">Каталог NORDVEX</p>
+            <h1>Системы профессиональной защиты</h1>
           </div>
-          <div className="catalog-code">AX.01</div>
+          <p>Выберите ведущий риск и сравните готовые комплекты. Все модели можно адаптировать под требования предприятия, фирменный стиль и размерную матрицу.</p>
         </div>
-      </article>
-      <article className="catalog-card reveal" id="weld-core" data-category="fire">
-        <div className="catalog-top">
-          <span>02 / Flame</span>
-          <span>NVX–WC.02</span>
+      </section>
+
+      <section className="catalog-section">
+        <div className="container filter-bar" aria-label="Фильтр каталога">
+          <button className="active" data-filter="all">Все системы</button>
+          <button data-filter="climate">Климат</button>
+          <button data-filter="fire">Огонь</button>
+          <button data-filter="visibility">Видимость</button>
+          <button data-filter="chemical">Загрязнения</button>
+          <button data-filter="mobility">Мобильность</button>
         </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/weld-core.svg`} alt="Комплект Weld Core" width={720} height={900} unoptimized />
+        <div className="container product-grid catalog-product-grid">
+          {products.map((product) => (
+            <article className="product-card catalog-product-card" id={product.id} data-category={product.category} key={product.id}>
+              <div className="product-card-image">
+                <Image src={`${basePath}/images/products/${product.image}`} alt={product.title} width={720} height={900} unoptimized />
+              </div>
+              <div className="product-card-body">
+                <div className="product-meta"><span>{product.label}</span><span>{product.code}</span></div>
+                <h2>{product.title}</h2>
+                <p>{product.text}</p>
+                <a className="plain-link" href={`${basePath}/contacts/#form`}>Запросить комплектацию</a>
+              </div>
+            </article>
+          ))}
         </div>
-        <div className="catalog-meta">
-          <div>
-            <h2>Weld Core</h2>
-            <p>Огнестойкий комплект для сварочных, литейных и ремонтных работ с усилением локтей, коленей и фронтальной зоны.</p>
-          </div>
-          <div className="catalog-code">WC.02</div>
+      </section>
+
+      <section className="section-block section-muted">
+        <div className="container section-heading">
+          <div><p className="eyebrow">Контрактная разработка</p><h2>Нет готовой модели — спроектируем</h2></div>
+          <div><p>Проводим аудит условий труда, создаём прототип и передаём тестовую партию на эксплуатацию.</p><a className="button button-primary" href={`${basePath}/contacts/#form`}>Поставить задачу</a></div>
         </div>
-      </article>
-      <article className="catalog-card reveal" id="vector-hi" data-category="visibility">
-        <div className="catalog-top">
-          <span>03 / Visibility</span>
-          <span>NVX–VH.03</span>
-        </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/vector-hi.svg`} alt="Комплект Vector Hi" width={720} height={900} unoptimized />
-        </div>
-        <div className="catalog-meta">
-          <div>
-            <h2>Vector Hi</h2>
-            <p>Сигнальная система круговой видимости для дорожных, складских и аварийных бригад.</p>
-          </div>
-          <div className="catalog-code">VH.03</div>
-        </div>
-      </article>
-      <article className="catalog-card reveal" id="chem-shield" data-category="chemical">
-        <div className="catalog-top">
-          <span>04 / Chemical</span>
-          <span>NVX–CS.04</span>
-        </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/chem-shield.svg`} alt="Комплект Chem Shield" width={720} height={900} unoptimized />
-        </div>
-        <div className="catalog-meta">
-          <div>
-            <h2>Chem Shield</h2>
-            <p>Барьерный комплект от аэрозолей, пыли и промышленного загрязнения с герметизированными узлами.</p>
-          </div>
-          <div className="catalog-code">CS.04</div>
-        </div>
-      </article>
-      <article className="catalog-card reveal" id="urban-shell" data-category="mobility">
-        <div className="catalog-top">
-          <span>05 / Mobility</span>
-          <span>NVX–US.05</span>
-        </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/urban-shell.svg`} alt="Комплект Urban Shell" width={720} height={900} unoptimized />
-        </div>
-        <div className="catalog-meta">
-          <div>
-            <h2>Urban Shell</h2>
-            <p>Облегчённая инженерная форма для сервисных служб, монтажа и городских инфраструктурных объектов.</p>
-          </div>
-          <div className="catalog-code">US.05</div>
-        </div>
-      </article>
-      <article className="catalog-card reveal" id="thermo-grid" data-category="climate">
-        <div className="catalog-top">
-          <span>06 / Base layer</span>
-          <span>NVX–TG.06</span>
-        </div>
-        <div className="catalog-visual">
-          <Image src={`${basePath}/images/products/thermo-grid.svg`} alt="Комплект Thermo Grid" width={720} height={900} unoptimized />
-        </div>
-        <div className="catalog-meta">
-          <div>
-            <h2>Thermo Grid</h2>
-            <p>Функциональный первый слой для управления влагой и поддержания стабильного микроклимата.</p>
-          </div>
-          <div className="catalog-code">TG.06</div>
-        </div>
-      </article>
-    </section>
-    <section className="section content-frame">
-      <div className="section-head reveal">
-        <div>
-          <p className="micro kicker">Контрактная разработка</p>
-        </div>
-        <div>
-          <h2 className="section-title">
-            Нет готовой модели?
-            <br />
-            <em>Спроектируем систему.</em>
-          </h2>
-          <p className="section-intro">Проводим аудит условий труда, собираем размерную матрицу, создаём прототип и передаём тестовую партию на эксплуатацию.</p>
-          <p>
-            <a className="text-link" href={`${basePath}/contacts/#form`}>Поставить задачу инженеру</a>
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
   );
 }
