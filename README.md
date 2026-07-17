@@ -1,34 +1,25 @@
 # NORDVEX
 
-Многостраничный корпоративный сайт производителя СИЗ и спецодежды.
+Многостраничный сайт производителя профессиональной спецодежды и СИЗ.
 
 ## Стек
 
-- Next.js App Router
-- React + TypeScript
+- Next.js
+- React
+- TypeScript
 - статический экспорт для GitHub Pages
-- GitHub Actions deployment
-
-## Страницы
-
-- `/` — главная
-- `/catalog/` — каталог
-- `/industries/` — отраслевые решения
-- `/production/` — производство
-- `/company/` — компания
-- `/contacts/` — контакты
 
 ## Локальный запуск
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-## Проверка
+## Сборка
 
 ```bash
-npm run lint
-npm run typecheck
 npm run build
 ```
+
+Изображения в демонстрационной версии загружаются с Pexels и используются по лицензии Pexels.

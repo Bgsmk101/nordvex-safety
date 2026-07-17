@@ -1,86 +1,36 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Контакты",
-  description: "Запрос проекта, образцов и корпоративной комплектации NORDVEX.",
-};
+export const metadata: Metadata = { title: "Контакты" };
 
-export default function Page() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export default function ContactsPage() {
   return (
-  <main className="page" id="main">
-    <section className="contact-layout content-frame">
-      <div className="contact-info">
-        <div>
-          <p className="micro kicker">Начать проект</p>
-          <h1>
-            Опишите
-            <br />
-            рабочую
-            <br />
-            среду
-          </h1>
+    <main>
+      <section className="page-hero">
+        <div className="container page-hero-grid">
+          <div><p className="eyebrow">Связаться с нами</p><h1>Обсудим условия и подготовим образцы</h1></div>
+          <p>Для первого шага достаточно описать сферу деятельности, условия работы и примерное количество сотрудников.</p>
         </div>
-        <div className="contact-list">
-          <div>
-            <small>Телефон</small>
+      </section>
+      <section className="section" id="request">
+        <div className="container contact-grid">
+          <aside className="contact-card">
+            <h2>NORDVEX</h2>
             <a href="tel:+73430001842">+7 (343) 000-18-42</a>
-          </div>
-          <div>
-            <small>Почта</small>
             <a href="mailto:office@nordvex.ru">office@nordvex.ru</a>
-          </div>
-          <div>
-            <small>Производственный офис</small>
-            <span>
-              Екатеринбург
-              <br />
-              Промышленный контур, 18
-            </span>
-          </div>
+            <span>Екатеринбург, Россия</span>
+            <span>Пн–Пт, 09:00–18:00</span>
+          </aside>
+          <form className="contact-form">
+            <div className="field"><label htmlFor="name">Имя</label><input id="name" name="name" type="text" placeholder="Как к вам обращаться" /></div>
+            <div className="field"><label htmlFor="company">Компания</label><input id="company" name="company" type="text" placeholder="Название компании" /></div>
+            <div className="field"><label htmlFor="phone">Телефон</label><input id="phone" name="phone" type="tel" placeholder="+7" /></div>
+            <div className="field"><label htmlFor="email">Email</label><input id="email" name="email" type="email" placeholder="mail@company.ru" /></div>
+            <div className="field full"><label htmlFor="industry">Отрасль</label><select id="industry" name="industry"><option>Выберите отрасль</option><option>Нефтегаз</option><option>Металлургия</option><option>Строительство</option><option>Логистика</option><option>Другая</option></select></div>
+            <div className="field full"><label htmlFor="message">Задача</label><textarea id="message" name="message" placeholder="Опишите условия работы, количество сотрудников и желаемые сроки"></textarea></div>
+            <div className="field full"><button className="button button-primary" type="submit">Отправить запрос</button></div>
+          </form>
         </div>
-      </div>
-      <div className="contact-form-wrap" id="form">
-        <div className="breadcrumbs">
-          <a href={`${basePath}/`}>NORDVEX</a>
-          <span>/</span>
-          <strong>Контакты</strong>
-        </div>
-        <h2 className="section-title contact-form-title">
-          Технический
-          <br />
-          <em>бриф</em>
-        </h2>
-        <form className="form-grid" data-demo-form="">
-          <div className="field">
-            <label htmlFor="name">Имя и компания</label>
-            <input id="name" name="name" required autoComplete="name" />
-          </div>
-          <div className="field">
-            <label htmlFor="contact">Телефон или e-mail</label>
-            <input id="contact" name="contact" required />
-          </div>
-          <div className="field">
-            <label htmlFor="industry">Отрасль</label>
-            <select id="industry" name="industry">
-              <option>Нефтегаз</option>
-              <option>Металлургия</option>
-              <option>Строительство</option>
-              <option>Логистика</option>
-              <option>Энергетика</option>
-              <option>Другая отрасль</option>
-            </select>
-          </div>
-          <div className="field">
-            <label htmlFor="task">Условия и задача</label>
-            <textarea id="task" name="task" placeholder="Температура, вид работ, количество сотрудников, обязательные СИЗ..."></textarea>
-          </div>
-          <button className="submit-btn" type="submit">Передать задачу</button>
-          <div className="form-success" data-form-success="">Спасибо. Запрос принят — специалист свяжется с вами для уточнения условий и комплектации.</div>
-          <p className="form-note">Отправляя форму, вы соглашаетесь на обработку данных для подготовки предложения по проекту.</p>
-        </form>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
   );
 }

@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SiteShell } from "@/components/site-shell";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export const metadata: Metadata = {
-  title: { default: "NORDVEX — системы профессиональной защиты", template: "%s — NORDVEX" },
-  description: "Премиальный многостраничный сайт производителя СИЗ и спецодежды NORDVEX.",
-  icons: { icon: `${basePath}/favicon.svg` },
+  title: { default: "NORDVEX — профессиональная защита", template: "%s — NORDVEX" },
+  description: "Спецодежда и системы индивидуальной защиты для промышленных предприятий.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="ru"><body><SiteShell>{children}</SiteShell></body></html>;
+  return (
+    <html lang="ru">
+      <body>
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
+    </html>
+  );
 }

@@ -1,64 +1,72 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Каталог",
-  description: "Каталог систем спецодежды и средств индивидуальной защиты NORDVEX.",
-};
+export const metadata: Metadata = { title: "Каталог" };
 
 const products = [
-  { id: "arctic-x", category: "climate", label: "Климат", title: "Arctic X", code: "AX.01", image: "arctic-x.svg", text: "Многослойная зимняя система для открытых площадок и длительной работы при экстремально низких температурах." },
-  { id: "weld-core", category: "fire", label: "Огонь", title: "Weld Core", code: "WC.02", image: "weld-core.svg", text: "Огнестойкий комплект для сварочных, литейных и ремонтных работ с усилением зон повышенной нагрузки." },
-  { id: "vector-hi", category: "visibility", label: "Видимость", title: "Vector Hi", code: "VH.03", image: "vector-hi.svg", text: "Сигнальная система круговой видимости для дорожных, складских и аварийных бригад." },
-  { id: "chem-shield", category: "chemical", label: "Загрязнения", title: "Chem Shield", code: "CS.04", image: "chem-shield.svg", text: "Барьерный комплект от аэрозолей, пыли и промышленного загрязнения с защищёнными узлами." },
-  { id: "urban-shell", category: "mobility", label: "Мобильность", title: "Urban Shell", code: "US.05", image: "urban-shell.svg", text: "Облегчённая инженерная форма для сервисных служб, монтажа и городских инфраструктурных объектов." },
-  { id: "thermo-grid", category: "climate", label: "Первый слой", title: "Thermo Grid", code: "TG.06", image: "thermo-grid.svg", text: "Функциональный первый слой для управления влагой и поддержания стабильного микроклимата." },
+  {
+    id: "arctic",
+    tag: "Климат",
+    title: "Arctic X",
+    image: "https://images.pexels.com/photos/35082106/pexels-photo-35082106.jpeg?cs=srgb&dl=pexels-safi-erneste-165511538-35082106.jpg&fm=jpg",
+    text: "Многослойные утеплённые комплекты для открытых площадок, северных регионов и длительной работы на холоде.",
+    bullets: ["ветро- и влагозащитные материалы", "регулируемая вентиляция", "совместимость с утепляющими слоями"],
+  },
+  {
+    id: "weld",
+    tag: "Огонь",
+    title: "Weld Core",
+    image: "https://images.pexels.com/photos/5362681/pexels-photo-5362681.jpeg?cs=srgb&dl=pexels-hassan-yahia-3582980-5362681.jpg&fm=jpg",
+    text: "Огнестойкие комплекты для сварочных, литейных и ремонтных работ в условиях искр и кратковременного теплового воздействия.",
+    bullets: ["огнестойкие ткани и нити", "усиление локтей и коленей", "защищённая фурнитура"],
+  },
+  {
+    id: "vector",
+    tag: "Видимость",
+    title: "Vector Hi",
+    image: "https://images.pexels.com/photos/34670925/pexels-photo-34670925.jpeg?cs=srgb&dl=pexels-bymuratisikofficial-34670925.jpg&fm=jpg",
+    text: "Сигнальная одежда круговой видимости для дорожных, строительных, складских и аварийных бригад.",
+    bullets: ["флуоресцентные материалы", "световозвращающие элементы", "анатомичный крой для движения"],
+  },
+  {
+    id: "chem",
+    tag: "Загрязнения",
+    title: "Chem Shield",
+    image: "https://images.pexels.com/photos/16368417/pexels-photo-16368417.jpeg?cs=srgb&dl=pexels-marianna-zuzanna-498248397-16368417.jpg&fm=jpg",
+    text: "Барьерные комплекты для производств с повышенным уровнем пыли, аэрозолей и технологических загрязнений.",
+    bullets: ["герметизированные швы", "защищённые манжеты", "материалы с лёгкой очисткой"],
+  },
+  {
+    id: "urban",
+    tag: "Мобильность",
+    title: "Urban Shell",
+    image: "https://images.pexels.com/photos/36122947/pexels-photo-36122947.jpeg?cs=srgb&dl=pexels-james-richardson-2159544295-36122947.jpg&fm=jpg",
+    text: "Лёгкая рабочая форма для складов, сервисных подразделений и городских инфраструктурных служб.",
+    bullets: ["облегчённые износостойкие ткани", "карманы под инструмент и устройства", "корпоративная персонализация"],
+  },
 ];
 
-export default function Page() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export default function CatalogPage() {
   return (
-    <main id="main">
-      <section className="inner-hero">
-        <div className="container inner-hero-grid">
-          <div>
-            <p className="eyebrow">Каталог NORDVEX</p>
-            <h1>Системы профессиональной защиты</h1>
-          </div>
-          <p>Выберите ведущий риск и сравните готовые комплекты. Все модели можно адаптировать под требования предприятия, фирменный стиль и размерную матрицу.</p>
+    <main>
+      <section className="page-hero">
+        <div className="container page-hero-grid">
+          <div><p className="eyebrow">Продуктовая матрица</p><h1>Каталог систем защиты</h1></div>
+          <p>Пять направлений, которые закрывают основные производственные риски. Каждую модель можно адаптировать под климат, регламент и фирменный стиль предприятия.</p>
         </div>
       </section>
-
-      <section className="catalog-section">
-        <div className="container filter-bar" aria-label="Фильтр каталога">
-          <button className="active" data-filter="all">Все системы</button>
-          <button data-filter="climate">Климат</button>
-          <button data-filter="fire">Огонь</button>
-          <button data-filter="visibility">Видимость</button>
-          <button data-filter="chemical">Загрязнения</button>
-          <button data-filter="mobility">Мобильность</button>
-        </div>
-        <div className="container product-grid catalog-product-grid">
+      <section className="section">
+        <div className="container catalog-list">
           {products.map((product) => (
-            <article className="product-card catalog-product-card" id={product.id} data-category={product.category} key={product.id}>
-              <div className="product-card-image">
-                <Image src={`${basePath}/images/products/${product.image}`} alt={product.title} width={720} height={900} unoptimized />
-              </div>
-              <div className="product-card-body">
-                <div className="product-meta"><span>{product.label}</span><span>{product.code}</span></div>
+            <article className="catalog-item" id={product.id} key={product.id}>
+              <div className="catalog-item-media"><img src={product.image} alt={product.title} /></div>
+              <div className="catalog-item-body">
+                <span className="tag">{product.tag}</span>
                 <h2>{product.title}</h2>
                 <p>{product.text}</p>
-                <a className="plain-link" href={`${basePath}/contacts/#form`}>Запросить комплектацию</a>
+                <ul>{product.bullets.map((item) => <li key={item}>{item}</li>)}</ul>
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="section-block section-muted">
-        <div className="container section-heading">
-          <div><p className="eyebrow">Контрактная разработка</p><h2>Нет готовой модели — спроектируем</h2></div>
-          <div><p>Проводим аудит условий труда, создаём прототип и передаём тестовую партию на эксплуатацию.</p><a className="button button-primary" href={`${basePath}/contacts/#form`}>Поставить задачу</a></div>
         </div>
       </section>
     </main>
