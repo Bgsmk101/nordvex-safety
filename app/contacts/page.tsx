@@ -35,7 +35,7 @@ export default function ContactsPage() {
             <div className="form-field form-field--wide"><label htmlFor="industry">05 / Отрасль</label><select id="industry" name="industry" defaultValue="" required><option value="" disabled>Выберите направление</option><option>Нефтегаз</option><option>Металлургия</option><option>Строительство и инфраструктура</option><option>Логистика и сервис</option><option>Химическое производство</option><option>Другая отрасль</option></select></div>
             <div className="form-field form-field--wide"><label htmlFor="quantity">06 / Численность команды</label><input id="quantity" name="quantity" type="number" inputMode="numeric" min="1" placeholder="Например, 120" /></div>
             <div className="form-field form-field--wide"><label htmlFor="message">07 / Условия и задача</label><textarea id="message" name="message" placeholder="Температура, тип работ, воздействия, действующие СИЗ и желаемые сроки" required /></div>
-            <div className="form-submit"><p>Нажимая кнопку, вы соглашаетесь на обработку введённых данных в рамках демонстрации.</p><button className="primary-action" type="submit">Передать задачу <span className="icon-arrow" aria-hidden="true" /></button></div>
+            <div className="form-submit"><p>Нажимая кнопку, вы соглашаетесь на обработку введённых данных в рамках демонстрации.</p><button className="primary-action" type="submit">Передать задачу</button></div>
             <p className="form-success" role="status" data-form-success>Бриф принят. В реальном проекте здесь появится номер обращения и срок ответа.</p>
           </form>
         </div>

@@ -19,7 +19,7 @@ export default function ProductionPage() {
     <main className="page" id="main">
       <section className="production-hero">
         <div className="content-frame production-hero-grid">
-          <div className="production-hero-copy"><p className="micro kicker">04 / Производство</p><h1>Точность,<br />которую можно<br /><em>повторить.</em></h1><p>Качество серии определяется не лучшим образцом, а тем, насколько стабильно каждый следующий комплект соответствует эталону.</p></div>
+          <div className="production-hero-copy"><p className="micro kicker">04 / Производство</p><h1>Точность, которую можно повторить.</h1><p>Качество серии определяется не лучшим образцом, а тем, насколько стабильно каждый следующий комплект соответствует эталону.</p></div>
           <figure className="production-hero-image">
             <Image src={asset("/images/nordvex-production.webp")} alt="Пошив технической защитной одежды" fill priority sizes="(max-width: 900px) 100vw, 58vw" />
             <figcaption><span>Line 02 / seam control</span><span>Revision 4.8</span></figcaption>

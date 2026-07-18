@@ -24,10 +24,10 @@ export default function HomePage() {
         <div className="content-frame home-hero-grid">
           <div className="home-hero-copy">
             <p className="micro kicker"><span>NVX / 01</span> Инженерные системы защиты</p>
-            <h1>Защита — часть <em>производственной</em> системы.</h1>
+            <h1>Защита, встроенная в производство.</h1>
             <p className="hero-lead">Проектируем и производим спецодежду под климат, риск и реальную механику рабочей смены.</p>
             <div className="action-row">
-              <Link className="primary-action" href="/catalog/">Изучить системы <span className="icon-arrow" aria-hidden="true" /></Link>
+              <Link className="primary-action" href="/catalog/">Изучить системы</Link>
               <Link className="text-link" href="/contacts/#form">Запросить тестовый комплект</Link>
             </div>
             <div className="hero-protocol" aria-label="Ключевые возможности">
@@ -41,8 +41,6 @@ export default function HomePage() {
             <Image src={asset("/images/nordvex-hero.webp")} alt="Специалист в защитном комплекте NORDVEX на производстве" fill priority sizes="(max-width: 900px) 100vw, 48vw" />
             <div className="hero-portrait-shade" />
             <figcaption><span>Система AX / 04</span><span>Industrial field test</span></figcaption>
-            <div className="hero-coordinate hero-coordinate--one">57° N</div>
-            <div className="hero-coordinate hero-coordinate--two">PROTECT / MOVE / ENDURE</div>
           </figure>
         </div>
       </section>
@@ -71,14 +69,12 @@ export default function HomePage() {
                   <small>{number}</small>
                   <span><strong>{title}</strong><em>{label}</em></span>
                   <span>{note}</span>
-                  <span className="icon-arrow" aria-hidden="true" />
                 </Link>
               ))}
             </div>
             <figure className="system-suit reveal">
-              <div className="technical-grid" aria-hidden="true" />
-              <Image src={asset("/images/hero-suit.svg")} alt="Техническая схема защитного комплекта NORDVEX" fill sizes="(max-width: 900px) 100vw, 40vw" />
-              <figcaption><span>Composite shell / layer 03</span><span>NVX engineering archive</span></figcaption>
+              <Image src={asset("/images/products/arctic-x.webp")} alt="Утеплённый защитный комплект Arctic X" fill sizes="(max-width: 900px) 100vw, 40vw" />
+              <figcaption><span>Arctic X / защита до −50 °C</span><span>Система AX–05</span></figcaption>
             </figure>
           </div>
         </div>
@@ -119,7 +115,7 @@ export default function HomePage() {
             <div><h2>Сначала условия.<br />Потом изделие.</h2><p>Одинаковая куртка не может одинаково хорошо работать в литейном цехе, на ветру и в движении между складом и рампой.</p></div>
           </header>
           <div className="industry-index reveal">
-            {industries.map(([number, title, note]) => <Link href="/industries/" key={number}><span>{number}</span><strong>{title}</strong><em>{note}</em><span className="icon-arrow" aria-hidden="true" /></Link>)}
+            {industries.map(([number, title, note]) => <Link href="/industries/" key={number}><span>{number}</span><strong>{title}</strong><em>{note}</em></Link>)}
           </div>
         </div>
       </section>
@@ -129,7 +125,7 @@ export default function HomePage() {
           <p className="micro kicker">Следующий шаг</p>
           <h2>Поставьте задачу.<br />Мы соберём систему.</h2>
           <p>Опишите климат, операции и численность команды. В ответ — состав комплекта, логика материалов и план тестирования.</p>
-          <Link className="primary-action primary-action--light" href="/contacts/#form">Начать проект <span className="icon-arrow" aria-hidden="true" /></Link>
+          <Link className="primary-action primary-action--light" href="/contacts/#form">Начать проект</Link>
         </div>
       </section>
     </main>

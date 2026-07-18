@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
+import { MenuIcon } from "@/components/icons";
 
 const navigation = [
   { n: "01", href: "/", title: "Главная", note: "Манифест бренда" },
@@ -120,14 +121,25 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <div className="site-shell">
       <a className="skip-link" href="#main">Перейти к содержанию</a>
       <header className="topbar">
-        <Link className="brand-mark" href="/" aria-label="NORDVEX — главная">NV</Link>
-        <Link className="brand-word" href="/">NORD<span>VEX</span></Link>
-        <div className="header-meta">
-          <Link className="header-link header-link--icon" href="/contacts/#form"><span>Запросить образцы</span><span className="icon-arrow" aria-hidden="true" /></Link>
-          <button className="menu-trigger" type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}><span>Разделы</span><i /></button>
+        <div className="topbar-inner">
+          <Link className="brand" href="/" aria-label="NORDVEX — главная">
+            <span className="brand-symbol">N</span>
+            <span className="brand-word">NORDVEX</span>
+          </Link>
+          <nav className="desktop-nav" aria-label="Основные разделы">
+            {navigation.slice(1, 5).map((item) => (
+              <Link key={item.href} href={item.href} aria-current={item.n === current.n ? "page" : undefined}>{item.title}</Link>
+            ))}
+          </nav>
+          <div className="header-meta">
+            <Link className="header-link" href="/contacts/#form">Запросить образцы</Link>
+            <button className="menu-trigger" type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}>
+              <span>{menuOpen ? "Закрыть" : "Меню"}</span>
+              <MenuIcon open={menuOpen} />
+            </button>
+          </div>
         </div>
       </header>
-      <aside className="side-rail" aria-hidden="true"><span className="vertical">Engineered workwear / Russian North</span><span className="rail-index">{current.n}</span></aside>
       <div className="nav-overlay" aria-hidden={!menuOpen} onClick={(event) => { if (event.target === event.currentTarget) setMenuOpen(false); }}>
         <div className="nav-overlay-inner">
           <nav className="nav-list" aria-label="Основная навигация">
@@ -144,7 +156,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       <footer className="footer">
         <div className="footer-grid">
-          <div><div className="footer-brand">NVX</div><p>Системы профессиональной защиты для среды, где цена ошибки выше стоимости экипировки.</p><Link className="footer-brief" href="/contacts/#form">Поставить задачу <span className="icon-arrow" aria-hidden="true" /></Link></div>
+          <div><div className="footer-brand">NORDVEX</div><p>Системы профессиональной защиты для среды, где цена ошибки выше стоимости экипировки.</p><Link className="footer-brief" href="/contacts/#form">Поставить задачу</Link></div>
           <div><h4>Навигация</h4><Link href="/catalog/">Каталог</Link><Link href="/industries/">Отрасли</Link><Link href="/production/">Производство</Link><Link href="/company/">Компания</Link></div>
           <div><h4>Связь</h4><a href="tel:+73430001842">+7 (343) 000-18-42</a><a href="mailto:office@nordvex.ru">office@nordvex.ru</a><span>Екатеринбург<br />Промышленный контур, 18</span></div>
         </div>

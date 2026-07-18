@@ -53,7 +53,7 @@ export default function CompanyPage() {
       </section>
 
       <section className="company-closing">
-        <div className="content-frame company-closing-layout reveal"><p className="micro kicker">Open brief</p><h2>Расскажите, где работает ваша команда.</h2><p>Мы начнём не с коммерческого предложения, а с пяти вопросов о среде и операциях.</p><Link className="primary-action" href="/contacts/#form">Открыть бриф <span className="icon-arrow" aria-hidden="true" /></Link></div>
+        <div className="content-frame company-closing-layout reveal"><p className="micro kicker">Open brief</p><h2>Расскажите, где работает ваша команда.</h2><p>Мы начнём не с коммерческого предложения, а с пяти вопросов о среде и операциях.</p><Link className="primary-action" href="/contacts/#form">Открыть бриф</Link></div>
       </section>
     </main>
   );

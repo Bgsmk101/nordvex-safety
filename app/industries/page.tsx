@@ -17,7 +17,7 @@ export default function IndustriesPage() {
       <section className="page-hero page-hero--dark industry-hero">
         <div className="content-frame page-hero-layout">
           <div><p className="micro kicker">03 / Отрасли</p><h1>Риск задаёт<br />конструкцию.</h1></div>
-          <div className="page-hero-note"><span>Рабочая среда → система защиты</span><p>Мы проектируем не для абстрактной отрасли, а для конкретной смены: маршрут, операции, продолжительность воздействия и соседние СИЗ.</p></div>
+          <div className="page-hero-note"><span>Рабочая среда и система защиты</span><p>Мы проектируем не для абстрактной отрасли, а для конкретной смены: маршрут, операции, продолжительность воздействия и соседние СИЗ.</p></div>
         </div>
         <div className="content-frame risk-axis" aria-hidden="true"><span>Климат</span><i /><span>Воздействие</span><i /><span>Движение</span><i /><span>Обслуживание</span></div>
       </section>
@@ -51,7 +51,7 @@ export default function IndustriesPage() {
             <li><span>03</span><div><strong>Совместимость</strong><p>Как одежда взаимодействует с каской, страховкой, обувью и перчатками.</p></div></li>
             <li><span>04</span><div><strong>Обслуживание</strong><p>Как комплект стирается, ремонтируется, хранится и заменяется.</p></div></li>
           </ol>
-          <div className="blueprint-action reveal"><p>Результат аудита — карта рисков и техническое задание на тестовый комплект.</p><Link className="primary-action" href="/contacts/#form">Заказать аудит <span className="icon-arrow" aria-hidden="true" /></Link></div>
+          <div className="blueprint-action reveal"><p>Результат аудита — карта рисков и техническое задание на тестовый комплект.</p><Link className="primary-action" href="/contacts/#form">Заказать аудит</Link></div>
         </div>
       </section>
     </main>
