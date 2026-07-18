@@ -1,51 +1,57 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
-export const metadata: Metadata = { title: "Отрасли" };
+export const metadata: Metadata = { title: "Отраслевые решения" };
 
-const features = [
-  {
-    tag: "Нефтегаз",
-    title: "Северные площадки",
-    image: "https://images.pexels.com/photos/35082106/pexels-photo-35082106.jpeg?cs=srgb&dl=pexels-safi-erneste-165511538-35082106.jpg&fm=jpg",
-    text: "Система учитывает длительное пребывание на открытом воздухе, ветер, осадки и переходы между тёплыми и холодными зонами.",
-  },
-  {
-    tag: "Металлургия",
-    title: "Горячие работы",
-    image: "https://images.pexels.com/photos/5362681/pexels-photo-5362681.jpeg?cs=srgb&dl=pexels-hassan-yahia-3582980-5362681.jpg&fm=jpg",
-    text: "Огнестойкие материалы, защищённая фурнитура и усиление зон максимальной механической нагрузки.",
-  },
-  {
-    tag: "Строительство",
-    title: "Высота и движение",
-    image: "https://images.pexels.com/photos/34670925/pexels-photo-34670925.jpeg?cs=srgb&dl=pexels-bymuratisikofficial-34670925.jpg&fm=jpg",
-    text: "Свобода движения, круговая видимость, совместимость со страховочной системой и удобное размещение инструмента.",
-  },
-  {
-    tag: "Логистика",
-    title: "Интенсивная смена",
-    image: "https://images.pexels.com/photos/36122947/pexels-photo-36122947.jpeg?cs=srgb&dl=pexels-james-richardson-2159544295-36122947.jpg&fm=jpg",
-    text: "Лёгкая форма, устойчивая к частой стирке и постоянному движению между складом, рампой и открытой площадкой.",
-  },
+const scenarios = [
+  { number: "01", sector: "Нефтегаз", title: "Северная площадка", text: "Длительное пребывание на открытом воздухе, ветер, осадки и переходы между тёплой и холодной зонами.", risks: "Холод / ветер / статика", system: "Arctic X + Thermo Grid", marker: "−50 °C" },
+  { number: "02", sector: "Металлургия", title: "Горячий цех", text: "Контакт с искрами и нагретыми поверхностями при одновременной механической нагрузке на изделие.", risks: "Искры / тепло / истирание", system: "Weld Core", marker: "FR" },
+  { number: "03", sector: "Строительство", title: "Высота и трафик", text: "Работа рядом с техникой и на высоте требует круговой видимости без ограничения движения и страховочной системы.", risks: "Видимость / высота / движение", system: "Vector Hi", marker: "360°" },
+  { number: "04", sector: "Логистика", title: "Интенсивная смена", text: "Частая смена температуры, высокая подвижность и регулярная стирка требуют лёгкой и стабильной конструкции.", risks: "Износ / климат / мобильность", system: "Urban Shell", marker: "24/7" },
+  { number: "05", sector: "Химические производства", title: "Чистый контур", text: "Пыль, аэрозоли и технологические загрязнения требуют барьерных узлов и понятного протокола обслуживания.", risks: "Частицы / загрязнение / очистка", system: "Chem Shield", marker: "B03" },
 ];
 
 export default function IndustriesPage() {
   return (
-    <main>
-      <section className="page-hero">
-        <div className="container page-hero-grid">
-          <div><p className="eyebrow">Рабочие сценарии</p><h1>Отраслевые решения</h1></div>
-          <p>Мы начинаем с условий конкретной смены: воздействия, маршрута сотрудника, необходимых средств защиты и частоты обслуживания комплекта.</p>
+    <main className="page" id="main">
+      <section className="page-hero page-hero--dark industry-hero">
+        <div className="content-frame page-hero-layout">
+          <div><p className="micro kicker">03 / Отрасли</p><h1>Риск задаёт<br />конструкцию.</h1></div>
+          <div className="page-hero-note"><span>Рабочая среда → система защиты</span><p>Мы проектируем не для абстрактной отрасли, а для конкретной смены: маршрут, операции, продолжительность воздействия и соседние СИЗ.</p></div>
+        </div>
+        <div className="content-frame risk-axis" aria-hidden="true"><span>Климат</span><i /><span>Воздействие</span><i /><span>Движение</span><i /><span>Обслуживание</span></div>
+      </section>
+
+      <section className="scenario-section">
+        <div className="content-frame">
+          <header className="section-intro section-intro--compact reveal">
+            <p className="micro kicker">Матрица сценариев</p>
+            <div><h2>Пять сред.<br />Пять разных ответов.</h2><p>Состав комплекта меняется вместе с картой риска — вплоть до расположения карманов, вентиляции и направления застёжек.</p></div>
+          </header>
+          <div className="scenario-list">
+            {scenarios.map((scenario) => (
+              <article className="scenario-row reveal" key={scenario.number}>
+                <span className="scenario-number">{scenario.number}</span>
+                <div className="scenario-title"><small>{scenario.sector}</small><h2>{scenario.title}</h2></div>
+                <p>{scenario.text}</p>
+                <dl><div><dt>Факторы</dt><dd>{scenario.risks}</dd></div><div><dt>Базовая система</dt><dd>{scenario.system}</dd></div></dl>
+                <strong>{scenario.marker}</strong>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-      <section className="section">
-        <div className="container">
-          {features.map((feature) => (
-            <article className="split-feature" key={feature.title}>
-              <div className="split-media"><img src={feature.image} alt={feature.title} /></div>
-              <div className="split-copy"><span className="tag">{feature.tag}</span><h2>{feature.title}</h2><p>{feature.text}</p></div>
-            </article>
-          ))}
+
+      <section className="industry-blueprint">
+        <div className="content-frame blueprint-layout">
+          <div className="blueprint-title reveal"><p className="micro kicker">Метод / NVX Field Map</p><h2>Комплект начинается с наблюдения.</h2></div>
+          <ol className="blueprint-steps reveal">
+            <li><span>01</span><div><strong>Маршрут</strong><p>Где сотрудник находится в течение смены и как меняется среда.</p></div></li>
+            <li><span>02</span><div><strong>Операции</strong><p>Какие движения повторяются и где возникает нагрузка на изделие.</p></div></li>
+            <li><span>03</span><div><strong>Совместимость</strong><p>Как одежда взаимодействует с каской, страховкой, обувью и перчатками.</p></div></li>
+            <li><span>04</span><div><strong>Обслуживание</strong><p>Как комплект стирается, ремонтируется, хранится и заменяется.</p></div></li>
+          </ol>
+          <div className="blueprint-action reveal"><p>Результат аудита — карта рисков и техническое задание на тестовый комплект.</p><Link className="primary-action" href="/contacts/#form">Заказать аудит <span className="icon-arrow" aria-hidden="true" /></Link></div>
         </div>
       </section>
     </main>

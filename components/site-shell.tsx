@@ -16,7 +16,8 @@ const navigation = [
 function normalizePath(pathname: string) {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const clean = base && pathname.startsWith(base) ? pathname.slice(base.length) : pathname;
-  return clean === "" ? "/" : clean;
+  if (clean === "" || clean === "/") return "/";
+  return clean.endsWith("/") ? clean : `${clean}/`;
 }
 
 export function SiteShell({ children }: { children: ReactNode }) {
@@ -24,6 +25,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
   const currentPath = normalizePath(pathname);
   const [menuOpen, setMenuOpen] = useState(false);
   const current = navigation.find((item) => item.href === currentPath || (item.href !== "/" && currentPath.startsWith(item.href))) ?? navigation[0];
+
+  useEffect(() => {
+    document.documentElement.classList.add("js");
+    return () => document.documentElement.classList.remove("js");
+  }, []);
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);
@@ -117,7 +123,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <Link className="brand-mark" href="/" aria-label="NORDVEX — главная">NV</Link>
         <Link className="brand-word" href="/">NORD<span>VEX</span></Link>
         <div className="header-meta">
-          <Link className="header-link header-link--icon" href="/contacts/#form"><span>Запросить образцы</span><span className="icon-arrow" aria-hidden="true"></span></Link>
+          <Link className="header-link header-link--icon" href="/contacts/#form"><span>Запросить образцы</span><span className="icon-arrow" aria-hidden="true" /></Link>
           <button className="menu-trigger" type="button" aria-label={menuOpen ? "Закрыть меню" : "Открыть меню"} aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}><span>Разделы</span><i /></button>
         </div>
       </header>
@@ -138,11 +144,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       <footer className="footer">
         <div className="footer-grid">
-          <div><div className="footer-brand">NVX</div><p>Системы профессиональной защиты для среды, где цена ошибки выше стоимости экипировки.</p></div>
+          <div><div className="footer-brand">NVX</div><p>Системы профессиональной защиты для среды, где цена ошибки выше стоимости экипировки.</p><Link className="footer-brief" href="/contacts/#form">Поставить задачу <span className="icon-arrow" aria-hidden="true" /></Link></div>
           <div><h4>Навигация</h4><Link href="/catalog/">Каталог</Link><Link href="/industries/">Отрасли</Link><Link href="/production/">Производство</Link><Link href="/company/">Компания</Link></div>
           <div><h4>Связь</h4><a href="tel:+73430001842">+7 (343) 000-18-42</a><a href="mailto:office@nordvex.ru">office@nordvex.ru</a><span>Екатеринбург<br />Промышленный контур, 18</span></div>
         </div>
-        <div className="footer-bottom"><span>© 2026 NORDVEX. Демонстрационный проект.</span><span>СИЗ · Спецодежда · Корпоративные комплекты</span></div>
+        <div className="footer-bottom"><span>© 2026 NORDVEX. Демонстрационный проект.</span><span>СИЗ · Спецодежда · Контрактная разработка</span></div>
       </footer>
     </div>
   );

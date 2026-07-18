@@ -1,5 +1,5 @@
 
-name: Deploy MARMVERSE to GitHub Pages
+name: Deploy NORDVEX to GitHub Pages
 
 on:
   push:

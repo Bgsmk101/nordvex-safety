@@ -1,120 +1,135 @@
+import Image from "next/image";
 import Link from "next/link";
+import { asset } from "@/lib/assets";
 
-const images = {
-  hero: "https://images.pexels.com/photos/35082106/pexels-photo-35082106.jpeg?cs=srgb&dl=pexels-safi-erneste-165511538-35082106.jpg&fm=jpg",
-  chemical: "https://images.pexels.com/photos/16368417/pexels-photo-16368417.jpeg?cs=srgb&dl=pexels-marianna-zuzanna-498248397-16368417.jpg&fm=jpg",
-  fire: "https://images.pexels.com/photos/5362681/pexels-photo-5362681.jpeg?cs=srgb&dl=pexels-hassan-yahia-3582980-5362681.jpg&fm=jpg",
-  production: "https://images.pexels.com/photos/23232388/pexels-photo-23232388.jpeg?cs=srgb&dl=pexels-vika-glitter-392079-23232388.jpg&fm=jpg",
-  construction: "https://images.pexels.com/photos/34670925/pexels-photo-34670925.jpeg?cs=srgb&dl=pexels-bymuratisikofficial-34670925.jpg&fm=jpg",
-  logistics: "https://images.pexels.com/photos/36122947/pexels-photo-36122947.jpeg?cs=srgb&dl=pexels-james-richardson-2159544295-36122947.jpg&fm=jpg",
-};
+const directions = [
+  ["01", "Arctic X", "Климатическая защита", "−50 °C / ветер / осадки", "arctic"],
+  ["02", "Weld Core", "Огнестойкая экипировка", "искры / тепло / металл", "weld"],
+  ["03", "Vector Hi", "Круговая видимость", "дороги / высота / трафик", "vector"],
+  ["04", "Chem Shield", "Барьерные комплекты", "пыль / аэрозоли / загрязнение", "chem"],
+  ["05", "Urban Shell", "Мобильные службы", "склад / сервис / инфраструктура", "urban"],
+];
+
+const industries = [
+  ["01", "Нефтегаз", "Северные площадки и открытая добыча"],
+  ["02", "Металлургия", "Горячие цеха и ремонтные работы"],
+  ["03", "Инфраструктура", "Строительство, дороги и высота"],
+  ["04", "Логистика", "Складские комплексы и сервисные службы"],
+];
 
 export default function HomePage() {
   return (
-    <main>
-      <section className="hero">
-        <div className="container hero-grid">
-          <div>
-            <p className="eyebrow">Производитель профессиональной экипировки</p>
-            <h1>Спецодежда, которая работает вместе с человеком</h1>
-            <p className="hero-lead">Проектируем комплекты под климат, производственный риск и реальные движения сотрудника в течение смены.</p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/catalog/">Смотреть каталог</Link>
-              <Link className="button button-light" href="/contacts/#request">Получить образцы</Link>
+    <main className="page" id="main">
+      <section className="home-hero">
+        <div className="content-frame home-hero-grid">
+          <div className="home-hero-copy">
+            <p className="micro kicker"><span>NVX / 01</span> Инженерные системы защиты</p>
+            <h1>Защита — часть <em>производственной</em> системы.</h1>
+            <p className="hero-lead">Проектируем и производим спецодежду под климат, риск и реальную механику рабочей смены.</p>
+            <div className="action-row">
+              <Link className="primary-action" href="/catalog/">Изучить системы <span className="icon-arrow" aria-hidden="true" /></Link>
+              <Link className="text-link" href="/contacts/#form">Запросить тестовый комплект</Link>
             </div>
-            <p className="hero-note">Серийное производство · корпоративный стиль · размерные матрицы</p>
-          </div>
-          <div className="hero-media">
-            <img src={images.hero} alt="Специалист в защитной спецодежде на производстве" />
-            <div className="hero-badge">
-              <strong>Комплект как единая система защиты</strong>
-              <span>Климат · видимость · огонь · загрязнение</span>
+            <div className="hero-protocol" aria-label="Ключевые возможности">
+              <span><b>01</b> Серийный выпуск</span>
+              <span><b>02</b> Контрактная разработка</span>
+              <span><b>03</b> Корпоративная идентификация</span>
             </div>
           </div>
+
+          <figure className="hero-portrait">
+            <Image src={asset("/images/nordvex-hero.webp")} alt="Специалист в защитном комплекте NORDVEX на производстве" fill priority sizes="(max-width: 900px) 100vw, 48vw" />
+            <div className="hero-portrait-shade" />
+            <figcaption><span>Система AX / 04</span><span>Industrial field test</span></figcaption>
+            <div className="hero-coordinate hero-coordinate--one">57° N</div>
+            <div className="hero-coordinate hero-coordinate--two">PROTECT / MOVE / ENDURE</div>
+          </figure>
         </div>
       </section>
 
-      <section className="stats">
-        <div className="container stats-grid">
-          <div className="stat"><strong>42+</strong><span>базовые модели в совместимой продуктовой матрице</span></div>
-          <div className="stat"><strong>18</strong><span>отраслевых сценариев комплектации</span></div>
-          <div className="stat"><strong>7</strong><span>этапов производственного контроля</span></div>
-          <div className="stat"><strong>72 ч</strong><span>на подготовку тестового комплекта после брифа</span></div>
+      <div className="signal-line" aria-label="Направления работы">
+        <div className="content-frame signal-line-inner">
+          <span>СИЗ</span><i />
+          <span>Спецодежда</span><i />
+          <span>Размерные матрицы</span><i />
+          <span>Северный климат</span><i />
+          <span>Серийные поставки</span>
         </div>
-      </section>
+      </div>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Каталог</p>
-              <h2>Пять направлений защиты</h2>
+      <section className="content-section system-section">
+        <div className="content-frame">
+          <header className="section-intro reveal">
+            <p className="micro kicker">02 / Продуктовая архитектура</p>
+            <div><h2>Не отдельные вещи.<br />Совместимая экипировка.</h2><p>Каждый элемент проектируется внутри общей системы: верхний слой, утепление, видимость, фурнитура и персональные СИЗ не мешают друг другу.</p></div>
+          </header>
+
+          <div className="system-layout">
+            <div className="system-directory reveal">
+              {directions.map(([number, title, label, note, id]) => (
+                <Link href={`/catalog/#${id}`} key={id}>
+                  <small>{number}</small>
+                  <span><strong>{title}</strong><em>{label}</em></span>
+                  <span>{note}</span>
+                  <span className="icon-arrow" aria-hidden="true" />
+                </Link>
+              ))}
             </div>
-            <p>Каждое направление решает конкретную задачу. Модели можно адаптировать под корпоративный стиль, климат и требования предприятия.</p>
-          </div>
-          <div className="product-grid">
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.hero} alt="Зимняя промышленная спецодежда" /></div>
-              <div className="product-card-body"><small>Климат</small><h3>Arctic X</h3><p>Утеплённые многослойные комплекты для открытых площадок и низких температур.</p><Link href="/catalog/#arctic">Подробнее</Link></div>
-            </article>
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.fire} alt="Огнестойкая экипировка для сварочных работ" /></div>
-              <div className="product-card-body"><small>Огонь</small><h3>Weld Core</h3><p>Огнестойкие решения для сварочных, литейных и ремонтных работ.</p><Link href="/catalog/#weld">Подробнее</Link></div>
-            </article>
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.construction} alt="Сигнальная рабочая одежда" /></div>
-              <div className="product-card-body"><small>Видимость</small><h3>Vector Hi</h3><p>Сигнальная одежда круговой видимости для стройки, дорог и логистики.</p><Link href="/catalog/#vector">Подробнее</Link></div>
-            </article>
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.chemical} alt="Защитная одежда от промышленного загрязнения" /></div>
-              <div className="product-card-body"><small>Загрязнения</small><h3>Chem Shield</h3><p>Барьерные материалы, герметичные узлы и защита от производственных загрязнений.</p><Link href="/catalog/#chem">Подробнее</Link></div>
-            </article>
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.logistics} alt="Рабочая одежда для логистики" /></div>
-              <div className="product-card-body"><small>Мобильность</small><h3>Urban Shell</h3><p>Лёгкая форма для сервисных служб, складов и инфраструктурных объектов.</p><Link href="/catalog/#urban">Подробнее</Link></div>
-            </article>
-            <article className="product-card">
-              <div className="product-card-media"><img src={images.production} alt="Производство профессиональной спецодежды" /></div>
-              <div className="product-card-body"><small>Разработка</small><h3>Custom Lab</h3><p>Контрактная разработка комплекта с прототипом, испытаниями и размерной матрицей.</p><Link href="/production/">Как мы работаем</Link></div>
-            </article>
+            <figure className="system-suit reveal">
+              <div className="technical-grid" aria-hidden="true" />
+              <Image src={asset("/images/hero-suit.svg")} alt="Техническая схема защитного комплекта NORDVEX" fill sizes="(max-width: 900px) 100vw, 40vw" />
+              <figcaption><span>Composite shell / layer 03</span><span>NVX engineering archive</span></figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section className="section section-dark">
-        <div className="container">
-          <div className="section-heading">
-            <div><p className="eyebrow">Отрасли</p><h2>Решения под реальные условия</h2></div>
-            <p>Комплектация начинается не с выбора куртки, а с понимания среды, продолжительности воздействия и маршрута сотрудника.</p>
-          </div>
-          <div className="industry-grid">
-            <article className="industry-card"><span>01</span><div><h3>Нефтегаз и северные площадки</h3><p>Теплозащита, ветер, статическая работа и резкие переходы между зонами.</p></div></article>
-            <article className="industry-card"><span>02</span><div><h3>Металлургия и горячие работы</h3><p>Искры, контактное тепло, усиленные зоны и совместимость со средствами защиты.</p></div></article>
-            <article className="industry-card"><span>03</span><div><h3>Строительство и инфраструктура</h3><p>Высота, движение, видимость и удобное размещение инструмента.</p></div></article>
-            <article className="industry-card"><span>04</span><div><h3>Логистика и сервисные службы</h3><p>Высокая подвижность, регулярная стирка и понятная идентификация персонала.</p></div></article>
+      <section className="proof-section">
+        <div className="content-frame proof-grid">
+          <div className="proof-statement reveal"><p className="micro kicker">Проверяемое качество</p><h2>От прототипа<br />до повторяемой серии.</h2></div>
+          <div className="proof-metrics">
+            <div className="reveal"><strong data-count="42" data-suffix="+">42+</strong><span>базовые модели в продуктовой матрице</span></div>
+            <div className="reveal"><strong data-count="18">18</strong><span>сценариев отраслевой комплектации</span></div>
+            <div className="reveal"><strong data-count="7">7</strong><span>контрольных точек производства</span></div>
+            <div className="reveal"><strong data-count="72" data-suffix=" ч">72 ч</strong><span>до готовности первого тестового комплекта</span></div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-heading">
-            <div><p className="eyebrow">Процесс</p><h2>От задачи до серийной поставки</h2></div>
-            <p>Работа разделена на понятные этапы. На каждом из них есть конкретный результат и точка согласования.</p>
-          </div>
-          <div className="steps">
-            <div className="step"><strong>01</strong><h3>Аудит условий</h3><p>Фиксируем риски, климат, движения и действующие нормы.</p></div>
-            <div className="step"><strong>02</strong><h3>Проектирование</h3><p>Подбираем материалы, конструкцию и состав комплекта.</p></div>
-            <div className="step"><strong>03</strong><h3>Тестовая партия</h3><p>Проверяем изделие в реальной эксплуатации и собираем обратную связь.</p></div>
-            <div className="step"><strong>04</strong><h3>Серия и поддержка</h3><p>Запускаем поставку, сохраняем паспорт модели и размерную матрицу.</p></div>
+      <section className="content-section process-feature">
+        <div className="content-frame editorial-split">
+          <figure className="editorial-image reveal">
+            <Image src={asset("/images/nordvex-production.webp")} alt="Изготовление защитной одежды на производстве NORDVEX" fill sizes="(max-width: 900px) 100vw, 58vw" />
+            <figcaption>Узел 07 / усиленный шов / входной контроль материала</figcaption>
+          </figure>
+          <div className="editorial-copy reveal">
+            <p className="micro kicker">03 / Производство</p>
+            <h2>Конструкция рождается на линии, а не в презентации.</h2>
+            <p>Технолог, конструктор и производство работают с одним паспортом модели. Изменения после полевого теста сразу попадают в эталон серии.</p>
+            <ul className="plain-specs"><li>Прототип и примерка</li><li>Полевое тестирование</li><li>Карта критических узлов</li><li>Контроль повторной партии</li></ul>
+            <Link className="text-link" href="/production/">Посмотреть производственный цикл</Link>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container cta-panel">
-          <div><h2>Начните с тестового комплекта</h2><p>Опишите условия работы — мы предложим состав системы и подготовим образцы для примерки.</p></div>
-          <Link className="button button-dark" href="/contacts/#request">Поставить задачу</Link>
+      <section className="content-section industry-index-section">
+        <div className="content-frame">
+          <header className="section-intro reveal">
+            <p className="micro kicker">04 / Рабочая среда</p>
+            <div><h2>Сначала условия.<br />Потом изделие.</h2><p>Одинаковая куртка не может одинаково хорошо работать в литейном цехе, на ветру и в движении между складом и рампой.</p></div>
+          </header>
+          <div className="industry-index reveal">
+            {industries.map(([number, title, note]) => <Link href="/industries/" key={number}><span>{number}</span><strong>{title}</strong><em>{note}</em><span className="icon-arrow" aria-hidden="true" /></Link>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="brief-section">
+        <div className="content-frame brief-layout reveal">
+          <p className="micro kicker">Следующий шаг</p>
+          <h2>Поставьте задачу.<br />Мы соберём систему.</h2>
+          <p>Опишите климат, операции и численность команды. В ответ — состав комплекта, логика материалов и план тестирования.</p>
+          <Link className="primary-action primary-action--light" href="/contacts/#form">Начать проект <span className="icon-arrow" aria-hidden="true" /></Link>
         </div>
       </section>
     </main>

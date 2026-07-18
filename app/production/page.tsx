@@ -1,38 +1,59 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { asset } from "@/lib/assets";
 
 export const metadata: Metadata = { title: "Производство" };
 
-const steps = [
-  ["01", "Аудит условий", "Фиксируем рабочие операции, риски, климатические зоны, средства защиты и требования предприятия."],
-  ["02", "Техническое задание", "Определяем состав комплекта, материалы, конструктивные узлы и требования к персонализации."],
-  ["03", "Прототип", "Создаём тестовый комплект и проверяем посадку, свободу движения и совместимость элементов."],
-  ["04", "Испытания", "Передаём комплект в эксплуатацию, собираем замечания и корректируем конструкцию."],
-  ["05", "Серийный запуск", "Фиксируем эталон изделия, размерную матрицу и требования к производственному контролю."],
-  ["06", "Поддержка поставок", "Сохраняем паспорт модели, историю изменений и параметры для повторных заказов."],
+const stages = [
+  ["01", "Аудит среды", "Карта операций, рисков и смежных СИЗ.", "Field map"],
+  ["02", "Техническое задание", "Состав комплекта, материалы и конструктивные узлы.", "Design brief"],
+  ["03", "Прототип", "Один комплект для проверки посадки и механики движения.", "Sample 01"],
+  ["04", "Полевое испытание", "Эксплуатация на смене и обратная связь от сотрудников.", "Field test"],
+  ["05", "Эталон серии", "Фиксированная конструкция, карта узлов и размерная матрица.", "Master spec"],
+  ["06", "Повторная поставка", "Контроль отклонений и история всех изменений модели.", "Series control"],
 ];
 
 export default function ProductionPage() {
   return (
-    <main>
-      <section className="page-hero">
-        <div className="container page-hero-grid">
-          <div><p className="eyebrow">Производственный цикл</p><h1>Понятный процесс без скрытых этапов</h1></div>
-          <p>Каждый этап имеет конкретный результат и точку согласования. Поэтому текст, конструкция и производство не конфликтуют между собой.</p>
+    <main className="page" id="main">
+      <section className="production-hero">
+        <div className="content-frame production-hero-grid">
+          <div className="production-hero-copy"><p className="micro kicker">04 / Производство</p><h1>Точность,<br />которую можно<br /><em>повторить.</em></h1><p>Качество серии определяется не лучшим образцом, а тем, насколько стабильно каждый следующий комплект соответствует эталону.</p></div>
+          <figure className="production-hero-image">
+            <Image src={asset("/images/nordvex-production.webp")} alt="Пошив технической защитной одежды" fill priority sizes="(max-width: 900px) 100vw, 58vw" />
+            <figcaption><span>Line 02 / seam control</span><span>Revision 4.8</span></figcaption>
+          </figure>
         </div>
       </section>
-      <section className="section">
-        <div className="container">
-          <div className="timeline">
-            {steps.map(([number, title, text]) => (
-              <div className="timeline-row" key={number}><strong>{number}</strong><h3>{title}</h3><p>{text}</p></div>
-            ))}
+
+      <section className="production-stages">
+        <div className="content-frame">
+          <header className="section-intro reveal"><p className="micro kicker">Производственный протокол</p><div><h2>Шесть этапов.<br />Одна версия правды.</h2><p>У технолога, конструктора, отдела качества и заказчика — один паспорт изделия и понятная точка согласования на каждом этапе.</p></div></header>
+          <div className="stage-table">
+            {stages.map(([number, title, result, code]) => <div className="stage-row reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{result}</p><small>{code}</small></div>)}
           </div>
         </div>
       </section>
-      <section className="section section-dark">
-        <div className="container split-feature">
-          <div className="split-media"><img src="https://images.pexels.com/photos/23232388/pexels-photo-23232388.jpeg?cs=srgb&dl=pexels-vika-glitter-392079-23232388.jpg&fm=jpg" alt="Производственный участок" /></div>
-          <div className="split-copy"><p className="eyebrow">Контроль качества</p><h2>Проверяем изделие как систему</h2><p>Материал, швы, молнии, световозвращающие элементы и усиления оцениваются вместе. Это исключает ситуацию, когда каждый узел формально соответствует требованиям, а комплект в целом неудобен или ненадёжен.</p></div>
+
+      <section className="quality-section">
+        <div className="content-frame quality-layout">
+          <div className="quality-copy reveal"><p className="micro kicker">Quality gate / 07</p><h2>Проверяем изделие целиком.</h2><p>Материал, нити, молнии, усиления и световозвращающие элементы могут пройти отдельные тесты — и всё равно конфликтовать в готовом комплекте. Поэтому финальная проверка всегда системная.</p><Link className="text-link text-link--light" href="/contacts/#form">Запросить карту контроля</Link></div>
+          <div className="quality-board reveal">
+            <div><span>01</span><strong>Входной контроль</strong><p>Материал и фурнитура сверяются с паспортом партии.</p></div>
+            <div><span>02</span><strong>Критические узлы</strong><p>Швы, усиления, застёжки и точки повышенной нагрузки.</p></div>
+            <div><span>03</span><strong>Размерный аудит</strong><p>Ключевые измерения контролируются на каждой партии.</p></div>
+            <div><span>04</span><strong>Финальная система</strong><p>Посадка, движение, маркировка и комплектность.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="materials-section">
+        <div className="content-frame materials-layout reveal">
+          <div><p className="micro kicker">Материалы</p><h2>Функция до фактуры.</h2></div>
+          <div className="material-row"><span>NordShell</span><b>240</b><p>Ветро- и влагозащитный внешний слой</p><small>outer / climate</small></div>
+          <div className="material-row"><span>Aramid Core</span><b>FR</b><p>Огнестойкая основа и усиление узлов</p><small>thermal / weld</small></div>
+          <div className="material-row"><span>Grid Flex</span><b>195</b><p>Износостойкая ткань для высокой мобильности</p><small>service / logistics</small></div>
         </div>
       </section>
     </main>
